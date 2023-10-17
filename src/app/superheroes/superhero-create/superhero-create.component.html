@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>{{tituloAccion}} Super Héroe</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formSuperheroe">
+    <mat-grid-list cols="1" rowHeight="80px">
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" class="mat-form-field">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name" autocomplete="off" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" class="mat-form-field">
+          <mat-label>Descripción</mat-label>
+          <input matInput formControlName="description" autocomplete="off" type="text">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" class="mat-form-field">
+          <mat-label>Nivel de Poder</mat-label>
+          <mat-select formControlName="powerLevel">
+            <mat-option value="Alto">Alto</mat-option>
+            <mat-option value="Medio">Medio</mat-option>
+            <mat-option value="Bajo">Bajo</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline" class="mat-form-field">
+          <mat-label>Habilidades</mat-label>
+          <mat-select formControlName="idAbility" multiple>
+            <mat-select-trigger>
+              {{ getSelectedOptionsText() }}
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of listAbility" [value]="item.id">
+              {{ item.name }} - {{item.powerLevel}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="addEditSuperhero()" [disabled]="formSuperheroe.invalid">{{botonAccion}}</button>
+    <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+  </div>
+</div>
+

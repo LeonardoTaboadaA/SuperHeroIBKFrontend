@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+

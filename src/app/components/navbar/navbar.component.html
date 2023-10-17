@@ -1,0 +1,19 @@
+<p>
+  <mat-toolbar style="background-color: #ff6900;">
+    <mat-toolbar-row>
+      <a routerLink="/" class="navbar-brand"> <!-- Utiliza el routerLink para navegar a una ruta específica -->
+        SuperHeroIBK
+      </a>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu" style="color: White">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="abrirListaSuperHeroe()">
+          Super Heroes
+        </button>
+        <!-- Puedes agregar más elementos del menú aquí si es necesario -->
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>

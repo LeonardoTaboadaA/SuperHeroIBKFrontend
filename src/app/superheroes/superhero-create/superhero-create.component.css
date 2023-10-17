@@ -1,0 +1,25 @@
+.mat-form-field{
+  font-size: 14px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  margin-bottom: 5px; /* Agrega un margen inferior a los botones */
+}
+
+@media screen and (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+  }
+  .button-container button {
+    margin-bottom: 10px; /* Agrega un margen inferior a los botones en la dirección de columna */
+  }
+}
+
+
